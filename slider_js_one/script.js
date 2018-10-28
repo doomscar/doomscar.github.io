@@ -1,5 +1,3 @@
-
-
 slider = function(list, prev, next, currentSlide){
   next.onclick = function() {
     if(currentSlide === list.length-1)
