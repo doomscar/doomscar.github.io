@@ -1,7 +1,7 @@
 
 var list = document.querySelectorAll('.slide');
 var currentSlide = 0;
-var button = document.querySelector('.next').onclick = function() {
+document.querySelector('.next').onclick = function() {
   if(currentSlide === list.length-1)
   {
     list[currentSlide].classList.remove('show');
@@ -15,7 +15,7 @@ var button = document.querySelector('.next').onclick = function() {
   }
 }
 
-var buttonprev = document.querySelector('.prev').onclick = function() {
+document.querySelector('.prev').onclick = function() {
   if(currentSlide === 0)
   {
     list[currentSlide].classList.remove('show');
