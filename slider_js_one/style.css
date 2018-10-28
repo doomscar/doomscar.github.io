@@ -4,13 +4,19 @@ body{
 
 .section-slide{
   position: relative;
-  width: 740px;
-  margin: 150px auto;
+  width: 720px;
+  height: 380px;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 .slider{
   position: inherit;
   background-color: white;
+  margin: 0;
+  padding: 0;
+  width: 720px;
+  height: 380px;
 }
 
 .slide {
@@ -23,13 +29,14 @@ body{
 
 .prev {
   position: absolute;
+  left: -50px;
   top: 170px;
 }
 
 .next {
   position: absolute;
   top: 170px;
-  left: 770px;
+  left: 740px;
 }
 
 .show{
@@ -37,3 +44,42 @@ body{
   /*transition: all 0.5s ease-in-out;
   transform: translateX(720px);*/
 }
+
+.second {
+  font-size: 0;
+}
+
+.second img{
+  width: 720px;
+  height: 380px;
+  display: block;
+}
+
+.second .gallery {
+  width: 720px;
+  height: 380px;
+  overflow: hidden;
+}
+
+.second .slider{
+  width: 9999px;
+  height: 380px;
+  margin: 0;
+  padding: 0;
+  transition: margin-left 500ms;
+}
+
+.second .slide{
+  position: relative;
+  display: inline-block;
+  list-style: none;
+}
+
+.second .prev{
+  left: -50px;
+}
+
+.second .next{
+  left: 740px;
+}
+
