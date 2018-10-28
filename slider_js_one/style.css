@@ -1,0 +1,39 @@
+body{
+  background-color: #1f1f1f;
+}
+
+.section-slide{
+  position: relative;
+  width: 740px;
+  margin: 150px auto;
+}
+
+.slider{
+  position: inherit;
+  background-color: white;
+}
+
+.slide {
+  width: 720px;
+  height: 380px;
+  position: absolute;
+  list-style: none;
+  z-index: 1;
+}
+
+.prev {
+  position: absolute;
+  top: 170px;
+}
+
+.next {
+  position: absolute;
+  top: 170px;
+  left: 770px;
+}
+
+.show{
+  z-index: 2;
+  /*transition: all 0.5s ease-in-out;
+  transform: translateX(720px);*/
+}
