@@ -91,7 +91,44 @@ img.photo {
   -o-border-radius: 10px;
 }
 
-/* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
+/*############################################ main ##########################################*/
+
+.header-main{
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+.header-main div {
+  margin-left: 170px;
+  margin-right: 170px;
+  padding-bottom: 110px;
+}
+
+.header-main p {
+  max-width: 534px;
+  text-transform: uppercase;
+}
+
+.header-main span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.main h2 {
+  margin-top: 0;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 40px;
+  font-family: "Raleway", sans-serif;
+  color: #595959;
+}
+
+.main h3 {
+  text-transform: uppercase;
+}
+
+
+
 @media only screen and (min-width : 120px) and (max-width : 700px) {
   .button li a {
     width: 100px;
@@ -117,5 +154,11 @@ img.photo {
   .header {
     background-size: cover;
     height: 250px;
+  }
+
+  .header-main div {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 30px;
   }
 }
