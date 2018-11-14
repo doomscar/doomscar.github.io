@@ -19,7 +19,7 @@ body {
 .header {
   position: inherit;
   height: 800px;
-  background: url("img/cover.png") no-repeat;
+  background: url("img/cover.jpg") no-repeat;
   background-size: 100%;
 }
 
