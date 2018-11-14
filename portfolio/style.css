@@ -12,13 +12,13 @@ body {
 
 .wrapper {
   position: relative;
-  width: 80vw;
+  max-width: 1400px; /*70vw;*/
   margin: 0 auto;
 }
 
 .header {
   position: inherit;
-  height: 900px;
+  height: 1500px;
   background: url("img/cover.png") no-repeat;
   background-size: 100%;
 }
@@ -29,12 +29,12 @@ h1 {
   text-align: center;
   color: white;
   font-family: Taiga;
-  font-size: 3vw;
+  font-size: 2vw;
 }
 
 .cite {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.5vw;
+  font-size: 1vw;
   text-align: center;
   margin-top: -5px;
   width: 100%;
@@ -48,9 +48,9 @@ p.logo {
 }
 
 img.photo {
-  width: 22vw;
+  width: 12vw;
   object-fit: cover;
-  margin-top: 12vw;
+  margin-top: 10vw;
   border: 1vh solid rgba(255, 255, 255, 0.13);
   border-radius: 50%;
   background-color: rgba(215, 215, 215, 0.13);
@@ -91,10 +91,10 @@ img.photo {
   -o-border-radius: 10px;
 }
 
-@media screen and (min-device-width: 1400px) {
+/*@media screen and (min-device-width: 1400px) {
   .button li a {
     width: 100px;
     font-size: 18px;
     line-height: 35px;
   }
- }
+ }*/
