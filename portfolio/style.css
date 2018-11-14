@@ -12,7 +12,7 @@ body {
 
 .wrapper {
   position: relative;
-  max-width: 1400px; /*70vw;*/
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -50,8 +50,8 @@ p.logo {
 img.photo {
   width: 337px;
   object-fit: cover;
-  margin-top: 10vw;
-  border: 1vh solid rgba(255, 255, 255, 0.13);
+  margin-top: 128px;
+  border: 10px solid rgba(255, 255, 255, 0.13);
   border-radius: 50%;
   background-color: rgba(215, 215, 215, 0.13);
   -webkit-border-radius: 50%;
@@ -141,6 +141,7 @@ img.photo {
   img.photo {
     width: 100px;
     margin-top: 10px;
+    border-width: 2px;
   }
 
   h1 {
@@ -162,4 +163,5 @@ img.photo {
     margin-right: 30px;
     padding-top: 30px;
   }
+
 }
