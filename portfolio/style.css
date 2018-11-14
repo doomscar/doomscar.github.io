@@ -18,7 +18,7 @@ body {
 
 .header {
   position: inherit;
-  height: 1500px;
+  height: 800px;
   background: url("img/cover.png") no-repeat;
   background-size: 100%;
 }
@@ -29,12 +29,12 @@ h1 {
   text-align: center;
   color: white;
   font-family: Taiga;
-  font-size: 2vw;
+  font-size: 44px;
 }
 
 .cite {
   font-family: 'Raleway', sans-serif;
-  font-size: 1vw;
+  font-size: 25px;
   text-align: center;
   margin-top: -5px;
   width: 100%;
