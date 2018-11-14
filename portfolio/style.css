@@ -20,7 +20,7 @@ body {
   position: inherit;
   height: 800px;
   background: url("img/cover.jpg") no-repeat;
-  background-size: 100%;
+  /*background-size: 100%;*/
 }
 
 h1 {
