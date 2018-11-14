@@ -92,7 +92,7 @@ img.photo {
 }
 
 /* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
-@media only screen and (min-width : 120px) and (max-width : 480px) {
+@media only screen and (min-width : 120px) and (max-width : 700px) {
   .button li a {
     width: 100px;
     font-size: 15px;
@@ -115,7 +115,7 @@ img.photo {
   }
 
   .header {
-    background-size: auto 100%;
+    background-size: cover;
     height: 250px;
   }
 }
