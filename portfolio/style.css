@@ -1,0 +1,99 @@
+@font-face {
+  font-family: Taiga; /* Имя шрифта */
+  src: url(fonts/Taiga.otf); /* Путь к файлу со шрифтом */
+ }
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:500');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.header {
+  position: inherit;
+  height: 80vh;
+  background: url("img/cover.png") no-repeat;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: white;
+  font-family: Taiga;
+  font-size: 3vw;
+}
+
+.cite {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5vw;
+  text-align: center;
+  margin-top: -5px;
+  width: 100%;
+  color: #1f98ad;
+}
+
+p.logo {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+img.photo {
+  width: 22vw;
+  object-fit: cover;
+  margin-top: 12vw;
+  border: 1vh solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  background-color: rgba(215, 215, 215, 0.13);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.button {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.button li {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button li a {
+  display: block;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: "Raleway", sans-serif;
+  color: rgb(236, 240, 241);
+  background-color: rgba(255, 255, 255, 0.051);
+  border: 2px solid rgb(190, 190, 190);
+  border-radius: 10px;
+  line-height: 50px;
+  text-align: center;
+  width: 159px;
+  margin: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+@media screen and (min-device-width: 1400px) {
+  .button li a {
+    width: 100px;
+    font-size: 18px;
+    line-height: 35px;
+  }
+ }
