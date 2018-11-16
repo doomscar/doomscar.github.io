@@ -76,7 +76,7 @@ img.photo {
   display: block;
   text-decoration: none;
   font-size: 24px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: rgb(236, 240, 241);
   background-color: rgba(255, 255, 255, 0.051);
   border: 2px solid rgb(190, 190, 190);
@@ -98,7 +98,7 @@ img.photo {
   background-color: #f3f3f3;
 }
 
-.header-main div {
+.header-main > div {
   margin-left: 170px;
   margin-right: 170px;
   padding-bottom: 110px;
@@ -107,6 +107,10 @@ img.photo {
 .header-main p {
   max-width: 534px;
   text-transform: uppercase;
+  font-size: 16px;
+  line-height: 30px;
+  font-family: 'Raleway', sans-serif;
+  color: #595959;
 }
 
 .header-main span {
@@ -119,7 +123,7 @@ img.photo {
   text-align: center;
   padding-top: 50px;
   font-size: 40px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #595959;
 }
 
@@ -127,6 +131,19 @@ img.photo {
   text-transform: uppercase;
 }
 
+.about div{
+  float: left;
+}
+
+.about img{
+  float: right;
+}
+
+.clearfix::after{
+  display: table;
+  content: "";
+  clear: both;
+}
 
 
 @media only screen and (min-width : 120px) and (max-width : 700px) {
