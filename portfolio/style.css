@@ -139,12 +139,12 @@ img.photo {
   flex-wrap: wrap;
 }
 
-.about .text{
+/*.about .text{
   float: left;
-}
+}*/
 
 .about .video{
-  float: right;
+  /*float: right;*/
   max-width: 463px;
 }
 
