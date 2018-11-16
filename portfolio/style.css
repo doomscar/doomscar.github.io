@@ -110,12 +110,13 @@ img.photo {
   font-size: 16px;
   line-height: 30px;
   font-family: 'Raleway', sans-serif;
-  color: #595959;
+  color: #7c7c7c;
 }
 
 .header-main span {
   text-transform: uppercase;
   font-weight: bold;
+  color: #595959;
 }
 
 .main h2 {
@@ -129,6 +130,7 @@ img.photo {
 
 .main h3 {
   text-transform: uppercase;
+  color: #595959;
 }
 
 .about div{
