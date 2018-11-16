@@ -119,13 +119,23 @@ img.photo {
   color: #595959;
 }
 
-.main h2 {
+.main .h2-header {
   margin-top: 0;
   text-align: center;
   padding-top: 50px;
   font-size: 40px;
   font-family: 'Raleway', sans-serif;
   color: #595959;
+}
+
+.main .h2-header:after{
+  margin: 0 auto;
+  margin-top: 10px;
+  display: block;
+  content: "\A";
+  background-color: rgb(136, 204, 216);
+  width: 116px;
+  height: 8px;
 }
 
 .main h3 {
@@ -139,13 +149,8 @@ img.photo {
   flex-wrap: wrap;
 }
 
-/*.about .text{
-  float: left;
-}*/
-
 .about .video{
-  /*float: right;*/
-  max-width: 463px;
+   max-width: 463px;
 }
 
 .about .video-img{
@@ -157,7 +162,6 @@ img.photo {
   content: "";
   clear: both;
 }
-
 
 @media only screen and (min-width : 120px) and (max-width : 700px) {
   .button li a {
