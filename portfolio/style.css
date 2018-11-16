@@ -133,12 +133,23 @@ img.photo {
   color: #595959;
 }
 
-.about div{
+.about {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about .text{
   float: left;
 }
 
-.about img{
+.about .video{
   float: right;
+  max-width: 463px;
+}
+
+.about .video-img{
+  width: 100%;
 }
 
 .clearfix::after{
