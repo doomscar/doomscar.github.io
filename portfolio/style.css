@@ -234,6 +234,80 @@ img.photo {
 
 /* ########################################## my blog ##############################################*/
 
+.my_blog {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 170px;
+  margin-right: 170px;
+  flex-wrap: wrap;
+}
+
+.my_blog > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.my_blog > div:nth-child(2){
+  margin-left: 55px;
+  margin-right: 55px;
+}
+
+.my_blog > div > div {
+  padding: 15px;
+  background-color: #ffffff;
+  max-width: 286px;
+  margin-bottom: 40px;
+}
+
+.my_blog > div > div > div {
+  padding: 15px;
+}
+
+.my_blog img {
+  width: 100%;
+}
+
+.my_blog h3 {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+}
+
+.my_blog span {
+  font-size: 14px;
+  color: #7c7c7c;
+}
+
+.my_blog span, .my_blog p{
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+}
+
+.my_blog p {
+  font-size: 16px;
+  color: #595959;
+}
+
+.my_blog a {
+  text-decoration: none;
+  display: block;
+  background-color: #64c9db;
+  width: 118px;
+  height: 42px;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  /*vertical-align: middle;*/
+  float: right;
+  line-height: 42px;
+  align-self: flex-end;
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
+
 /* ########################################## media ##############################################*/
 
 @media only screen and (min-width : 120px) and (max-width : 700px) {
@@ -275,9 +349,14 @@ img.photo {
     justify-content: center;
   }
 
-  .port {
+  .port, .my_blog {
     margin-left: 30px;
     margin-right: 30px;
+  }
+
+  .my_blog > div:nth-child(2){
+    margin-left: 0;
+    margin-right: 0;
   }
 
 }
