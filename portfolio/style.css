@@ -207,6 +207,33 @@ img.photo {
   color: rgba(243, 243, 243, 0.702);;
 }
 
+/* ########################################## portfolio ##############################################*/
+
+.portfolio{
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+.port {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 170px;
+  margin-right: 170px;
+  font-size: 0;
+}
+
+.port div {
+  max-width: 325px;
+}
+
+.port img {
+  width: 100%;
+}
+
+/* ########################################## my blog ##############################################*/
+
 /* ########################################## media ##############################################*/
 
 @media only screen and (min-width : 120px) and (max-width : 700px) {
@@ -246,6 +273,11 @@ img.photo {
 
   .service-list{
     justify-content: center;
+  }
+
+  .port {
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
 }
