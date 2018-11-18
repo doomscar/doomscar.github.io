@@ -308,6 +308,98 @@ img.photo {
   margin-bottom: 20px;
 }
 
+/* ########################################## project ############################################*/
+
+.project {
+  background: url("img/apple-bag-collaboration-154.png") no-repeat;
+  max-width: 1400px;
+  height: 658px;
+}
+
+/* ######################################### footer ##############################################*/
+
+footer{
+  background-color: #f3f3f3;
+  min-height: 225px;
+}
+
+footer .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  flex-wrap: wrap;
+}
+
+footer .contact p{
+  margin: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  color: #110c0c;
+}
+
+footer .contact a{
+  display: block;
+  margin: 10px;
+  text-decoration: none;
+  background-color: #5dbed2;
+  color: #ffffff;
+  border-radius: 10px;
+  width: 168px;
+  height: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+}
+
+footer .copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-top: 1px solid #cccccc;
+}
+
+.copyright p {
+  font-family: 'Raleway', sans-serif;
+  color: #8e8e8e;
+  font-size: 18px;
+}
+
+.social {
+  background: url("img/social.png") no-repeat;
+  display: inline-block;
+  margin: 5px;
+}
+
+.fb {
+  background-position: -35px -5px;
+  width: 11px;
+  height: 21px;
+}
+
+.tw {
+  background-position: -5px -5px;
+  width: 20px;
+  height: 16px;
+}
+
+.hz {
+  background-position: -86px -5px;
+  width: 20px;
+  height: 20px;
+}
+
+.ig {
+  background-position: -56px -5px;
+  width: 20px;
+  height: 20px;
+}
+
 /* ########################################## media ##############################################*/
 
 @media only screen and (min-width : 120px) and (max-width : 700px) {
