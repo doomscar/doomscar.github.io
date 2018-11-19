@@ -5,7 +5,14 @@
   /* Путь к файлу со шрифтом */
 }
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:500');
+@font-face {
+  font-family: 'Raleway';
+  /* Имя шрифта */
+  src: url(fonts/Raleway/Raleway-Medium.ttf);
+  /* Путь к файлу со шрифтом */
+}
+
+/*@import url('https://fonts.googleapis.com/css?family=Raleway:500');*/
 
 body {
   margin: 0;
