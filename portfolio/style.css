@@ -157,7 +157,7 @@ img.photo {
 .about {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
 }
 
 .about .video {
@@ -454,6 +454,13 @@ footer .copyright {
 }
 
 /* ########################################## media ##############################################*/
+
+@media only screen and (min-width: 120px) and (max-width: 1176px) {
+  .about {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 
 @media only screen and (min-width : 120px) and (max-width : 700px) {
   .button li a {
