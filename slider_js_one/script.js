@@ -1,3 +1,5 @@
+/*############################################ first_slider #########################################*/
+
 var container = document.querySelector('.section-slide');
 
 slider(container.querySelectorAll('.slide'), container.querySelector('.prev'), container.querySelector('.next'), 0);

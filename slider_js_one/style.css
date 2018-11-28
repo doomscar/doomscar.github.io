@@ -27,16 +27,41 @@ body{
   z-index: 1;
 }
 
+button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  background-color: #585858;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+  padding: 0;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: #737373;
+}
+
+button:active{
+  cursor: pointer;
+  background-color: #585858;
+}
+
 .prev {
   position: absolute;
-  left: -50px;
+  left: -55px;
   top: 170px;
+  padding-right: 2px;
 }
 
 .next {
   position: absolute;
   top: 170px;
-  left: 740px;
+  left: 735px;
+  padding-left: 2px;
 }
 
 .show{
@@ -76,10 +101,10 @@ body{
 }
 
 .second .prev{
-  left: -50px;
+  left: -55px;
 }
 
 .second .next{
-  left: 740px;
+  left: 735px;
 }
 
