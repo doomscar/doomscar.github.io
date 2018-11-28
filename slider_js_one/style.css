@@ -45,18 +45,18 @@ button.prev::after{
     content: ''; 
     position: absolute;
     left: 0px;
-    bottom: 10px; /* Положение треугольника */
-    border: 10px solid transparent; /* Прозрачные границы */
-    border-right: 15px solid white; /* Добавляем треугольник */
+    bottom: 10px;
+    border: 10px solid transparent;
+    border-right: 15px solid white;
 }
 
 button.next::after{
   content: ''; 
   position: absolute;
   left: 15px;
-  bottom: 10px; /* Положение треугольника */
-  border: 10px solid transparent; /* Прозрачные границы */
-  border-left: 15px solid white; /* Добавляем треугольник */
+  bottom: 10px;
+  border: 10px solid transparent;
+  border-left: 15px solid white;
 }
 
 button:hover{
