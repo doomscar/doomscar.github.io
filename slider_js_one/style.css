@@ -28,8 +28,9 @@ body{
 }
 
 button {
-  width: 40px;
-  height: 40px;
+  position: relative;
+  width: 41px;
+  height: 41px;
   border-radius: 50%;
   border: none;
   font-size: 25px;
@@ -38,6 +39,24 @@ button {
   background-color: #585858;
   font-family: 'Times New Roman', Times, serif, sans-serif;
   padding: 0;
+}
+
+button.prev::after{
+    content: ''; 
+    position: absolute;
+    left: 0px;
+    bottom: 10px; /* Положение треугольника */
+    border: 10px solid transparent; /* Прозрачные границы */
+    border-right: 15px solid white; /* Добавляем треугольник */
+}
+
+button.next::after{
+  content: ''; 
+  position: absolute;
+  left: 15px;
+  bottom: 10px; /* Положение треугольника */
+  border: 10px solid transparent; /* Прозрачные границы */
+  border-left: 15px solid white; /* Добавляем треугольник */
 }
 
 button:hover{
