@@ -1,6 +1,6 @@
 /*############################################ first_slider #########################################*/
 
-var container = document.querySelector('.section-slide');
+let container = document.querySelector('.section-slide');
 
 slider(container.querySelectorAll('.slide'), container.querySelector('.prev'), container.querySelector('.next'), 0);
 
@@ -42,7 +42,7 @@ function carousel(section, width, count){
   section_ul = section.querySelector('.slider');
   section_li = section_ul.querySelectorAll('.slide');
 
-  var position = 0;
+  let position = 0;
 
   section.querySelector('.prev').onclick = function(){
     position = Math.min(position + width * count, 0);
