@@ -1,8 +1,8 @@
-body{
+body {
   background-color: #1f1f1f;
 }
 
-.section-slide{
+.section-slide {
   position: relative;
   width: 720px;
   height: 380px;
@@ -10,7 +10,7 @@ body{
   margin-top: 50px;
 }
 
-.slider{
+.slider {
   position: inherit;
   background-color: white;
   margin: 0;
@@ -41,17 +41,17 @@ button {
   padding: 0;
 }
 
-button.prev::after{
-    content: ''; 
-    position: absolute;
-    left: 0px;
-    bottom: 10px;
-    border: 10px solid transparent;
-    border-right: 15px solid white;
+button.prev::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: 10px;
+  border: 10px solid transparent;
+  border-right: 15px solid white;
 }
 
-button.next::after{
-  content: ''; 
+button.next::after {
+  content: '';
   position: absolute;
   left: 15px;
   bottom: 10px;
@@ -59,12 +59,12 @@ button.next::after{
   border-left: 15px solid white;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
   background-color: #737373;
 }
 
-button:active{
+button:active {
   cursor: pointer;
   background-color: #585858;
 }
@@ -83,7 +83,7 @@ button:active{
   padding-left: 2px;
 }
 
-.show{
+.show {
   z-index: 2;
   /*transition: all 0.5s ease-in-out;
   transform: translateX(720px);*/
@@ -93,7 +93,7 @@ button:active{
   font-size: 0;
 }
 
-.second img{
+.second img {
   width: 720px;
   height: 380px;
   display: block;
@@ -105,7 +105,7 @@ button:active{
   overflow: hidden;
 }
 
-.second .slider{
+.second .slider {
   width: 9999px;
   height: 380px;
   margin: 0;
@@ -113,17 +113,16 @@ button:active{
   transition: margin-left 500ms;
 }
 
-.second .slide{
+.second .slide {
   position: relative;
   display: inline-block;
   list-style: none;
 }
 
-.second .prev{
+.second .prev {
   left: -55px;
 }
 
-.second .next{
+.second .next {
   left: 735px;
 }
-
