@@ -345,7 +345,7 @@ function update () {
     //turret.rotation = game.physics.arcade.angleToPointer(turret);
     turret.angle = tank.angle;
 
-    if (game.input.activePointer.isDown)
+    if (game.input.activePointer.isDown || game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).isDown)
     {
         //  Boom!
         if(lives > 0){
