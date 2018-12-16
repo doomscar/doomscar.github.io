@@ -292,7 +292,6 @@ function update () {
     //game.physics.arcade.collide(bricks[i], tank);
     //game.physics.arcade.collide(bullets, bricks, enemyBulHitBrick);
     game.physics.arcade.collide(bullets, bricks);
-
     if (leftKey.isDown)
     {
         tank.angle = 180;
@@ -349,7 +348,9 @@ function update () {
     if (game.input.activePointer.isDown)
     {
         //  Boom!
-        fire();
+        if(lives > 0){
+            fire();
+        }
     }
 
 }
@@ -360,10 +361,20 @@ function bulletHitPlayer (tank, bullet) {
     lives--;
     console.log(lives);
     if(lives <= 0) {
-        alert('You lost, game over!');
-        location.reload();
+        let explosionAnimation = explosions.getFirstExists(false);
+        explosionAnimation.reset(tank.x, tank.y);
+        explosionAnimation.play('kaboom', 30, false, true);
+        shadow.kill();
+        tank.kill();
+        turret.kill();
+        setTimeout(ReloadLocAlert, 3000);
     }
 
+}
+
+function ReloadLocAlert () {
+    alert('You lost, game over!');
+    location.reload();
 }
 
 function bulletHitEnemy (tank, bullet) {
