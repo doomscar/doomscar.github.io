@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <script src="phaser.min.js"></script>
+    <script src="js/codeflask.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <script src="games/tanks.js"></script>
+    <div class="editor"></div>
+    <div class="run"><button>Run</button></div>
+    <script>
+        const flask = new CodeFlask('.editor', {
+            language: 'js',
+            lineNumbers: true,
+            areaId: 'thing1',
+            ariaLabelledby: 'header1',
+            handleTabs: true
+        });
+
+        window['flask'] = flask;
+    </script>
 </body>
+
 </html>

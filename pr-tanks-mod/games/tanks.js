@@ -359,7 +359,6 @@ function bulletHitPlayer (tank, bullet) {
 
     bullet.kill();
     lives--;
-    console.log(lives);
     if(lives <= 0) {
         let explosionAnimation = explosions.getFirstExists(false);
         explosionAnimation.reset(tank.x, tank.y);
