@@ -289,20 +289,6 @@ function removeLogo () {
 
 function update () {
 
-    /*if (game.input.activePointer.withinGame)
-    {
-        //game.input.enabled = true;
-        //game.paused = false;
-        //game.stage.backgroundColor = '#736357';
-    }
-    else
-    {
-        //game.input.enabled = false;
-        //lives++;
-        //game.paused = true;
-        //game.stage.backgroundColor = '#731111';
-    }*/
-
     game.physics.arcade.overlap(enemyBullets, tank, bulletHitPlayer, null, this);
 
     enemiesAlive = 0;
