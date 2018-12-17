@@ -127,6 +127,8 @@ var shadow;
 var tank;
 var turret;
 
+var leftGo = false;
+
 var enemies;
 var enemyBullets;
 var enemiesTotal = 0;
@@ -240,9 +242,41 @@ function create () {
 	rightKey = game.input.keyboard.addKey(Phaser.Keyboard.D);
     upKey = game.input.keyboard.addKey(Phaser.Keyboard.W);
     downKey = game.input.keyboard.addKey(Phaser.Keyboard.S);
+    spaceb = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     //cursors = game.input.keyboard.keys;
 
     //tank.events.onOutOfBounds.add(LeaveScreen, this);
+
+    /**************************************************************** pause menu */
+
+    game.input.keyboard.removeKeyCapture(Phaser.Keyboard.A);
+    game.input.keyboard.removeKeyCapture(Phaser.Keyboard.D);
+    game.input.keyboard.removeKeyCapture(Phaser.Keyboard.S);
+    game.input.keyboard.removeKeyCapture(Phaser.Keyboard.W);
+    game.input.keyboard.removeKeyCapture(Phaser.Keyboard.SPACEBAR);
+
+
+    pause_label = game.add.text(-200, -980, "Pause", { font: '24px Arial', fill: '#fff' });
+    pause_label.inputEnabled = true;
+    pause_label.events.onInputUp.add(function () {
+        // When the paus button is pressed, we pause the game
+        pause_label.setText("Start");
+        game.paused = true;
+    });
+
+    // Add a input listener that can help us return from being paused
+    game.input.onDown.add(unpause, self);
+
+    // And finally the method that handels the pause menu
+    function unpause(event){
+        // Only act if paused
+        if(game.paused){
+                 game.paused = false;
+                 pause_label.setText("Pause");
+        }
+    };
+
+    /**************************************************************************** */
 
 }
 
@@ -254,6 +288,20 @@ function removeLogo () {
 }
 
 function update () {
+
+    /*if (game.input.activePointer.withinGame)
+    {
+        //game.input.enabled = true;
+        //game.paused = false;
+        //game.stage.backgroundColor = '#736357';
+    }
+    else
+    {
+        //game.input.enabled = false;
+        //lives++;
+        //game.paused = true;
+        //game.stage.backgroundColor = '#731111';
+    }*/
 
     game.physics.arcade.overlap(enemyBullets, tank, bulletHitPlayer, null, this);
 
@@ -292,7 +340,7 @@ function update () {
     //game.physics.arcade.collide(bricks[i], tank);
     //game.physics.arcade.collide(bullets, bricks, enemyBulHitBrick);
     game.physics.arcade.collide(bullets, bricks);
-    if (leftKey.isDown)
+    if (leftKey.isDown || leftGo)
     {
         tank.angle = 180;
         currentSpeed = 300;
@@ -345,7 +393,7 @@ function update () {
     //turret.rotation = game.physics.arcade.angleToPointer(turret);
     turret.angle = tank.angle;
 
-    if (game.input.activePointer.isDown || game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).isDown)
+    if (spaceb.isDown)
     {
         //  Boom!
         if(lives > 0){

@@ -10,7 +10,7 @@
 <body>
     <script src="games/tanks.js"></script>
     <div class="editor"></div>
-    <div class="run"><button>Run</button></div>
+    <div class="run"><button type="button" onclick="TextValue()">Run</button></div>
     <script>
         const flask = new CodeFlask('.editor', {
             language: 'js',
@@ -21,6 +21,12 @@
         });
 
         window['flask'] = flask;
+    </script>
+    <script>
+        function TextValue() {
+            var x = document.getElementById("thing1").value;
+            eval(x);
+        }
     </script>
 </body>
 
