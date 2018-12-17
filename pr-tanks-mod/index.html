@@ -28,13 +28,13 @@
     </script>
     <script>
         function TextValue() {
-            var x = document.getElementById("thing1").value;
+            let x = document.getElementById("thing1").value;
             eval(x);
         }
     </script>
     <script>
         function Go(way, num) {
-            x = way + " = true; setTimeout(() => " + way + " = false, " + num + ")";
+            let x = way + " = true; setTimeout(() => " + way + " = false, " + num + ");";
             eval(x);
         }
     </script>
