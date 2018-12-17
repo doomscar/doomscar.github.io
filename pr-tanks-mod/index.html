@@ -9,7 +9,11 @@
 
 <body>
     <script src="games/tanks.js"></script>
-    <div class="editor"></div>
+    <div class="editor">// Go("leftGo", 300);
+// Go("rightGo", 300);
+// Go("upGo", 300);
+// Go("Go", 300);
+// lives++;</div>
     <div class="run"><button type="button" onclick="TextValue()">Run</button></div>
     <script>
         const flask = new CodeFlask('.editor', {
@@ -25,6 +29,12 @@
     <script>
         function TextValue() {
             var x = document.getElementById("thing1").value;
+            eval(x);
+        }
+    </script>
+    <script>
+        function Go(way, num) {
+            x = way + " = true; setTimeout(() => " + way + " = false, " + num + ")";
             eval(x);
         }
     </script>

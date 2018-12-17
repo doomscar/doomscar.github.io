@@ -128,6 +128,9 @@ var tank;
 var turret;
 
 var leftGo = false;
+var rightGo = false;
+var upGo = false;
+var downGo = false;
 
 var enemies;
 var enemyBullets;
@@ -332,20 +335,20 @@ function update () {
         currentSpeed = 300;
     }
 
-    else if (rightKey.isDown)
+    else if (rightKey.isDown || rightGo)
     {
         tank.angle = 0;
         currentSpeed = 300;
     }
 
-    else if (upKey.isDown)
+    else if (upKey.isDown || upGo)
     {
         //  The speed we'll travel at
         tank.angle = 270;
         currentSpeed = 300;
     }
     
-    else if (downKey.isDown)
+    else if (downKey.isDown || downGo)
     {
         //  The speed we'll travel at
         tank.angle = 90;
