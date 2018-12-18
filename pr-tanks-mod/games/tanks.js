@@ -315,6 +315,10 @@ function update () {
         }
     }
 
+    if(enemiesAlive == 0){
+        setTimeout(() => {alert("You win!"); location.reload();}, 3000);
+    }
+
     for (var i = 0; i < bricks.length; i++){
         if (bricks[i].alive)
         {
