@@ -159,7 +159,7 @@ var brickInfo;
 function create () {
 
     //  Resize our game world to be a 2000 x 2000 square
-    game.world.setBounds(-1000, -1000, 900, 600);
+    //game.world.setBounds(0, 0, 900, 600);
 
     //  Our tiled scrolling background
     land = game.add.tileSprite(0, 0, 900, 700, 'earth');
@@ -168,7 +168,7 @@ function create () {
     initBricks();
 
     //  The base of our tank
-    tank = game.add.sprite(0, 0, 'tank', 'tank1');
+    tank = game.add.sprite(700, 550, 'tank', 'tank1');
     tank.anchor.setTo(0.5, 0.5);
     tank.animations.add('move', ['tank1', 'tank2', 'tank3', 'tank4', 'tank5', 'tank6'], 20, true);
 
@@ -259,7 +259,7 @@ function create () {
     game.input.keyboard.removeKeyCapture(Phaser.Keyboard.SPACEBAR);
 
 
-    pause_label = game.add.text(-200, -980, "Pause", { font: '24px Arial', fill: '#fff' });
+    pause_label = game.add.text(810, 20, "Pause", { font: '24px Arial', fill: '#fff' });
     pause_label.inputEnabled = true;
     pause_label.events.onInputUp.add(function () {
         // When the paus button is pressed, we pause the game
@@ -482,8 +482,8 @@ function initBricks() {
             col: 14
         },
         offset: {
-            top: -800,
-            left: -966
+            top: 200,
+            left: 35
         },
         padding: 0
     };
