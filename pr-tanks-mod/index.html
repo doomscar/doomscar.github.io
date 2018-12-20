@@ -36,13 +36,14 @@
     <script>
         function TextValue() {
             let x = document.getElementById("thing1").value;
-            eval(x);
+            run(x);
         }
-    </script>
-    <script>
         function Go(way, num) {
             let x = way + " = true; setTimeout(() => " + way + " = false, " + num + ");";
-            eval(x);
+            run(x);
+        }
+        function run (code){
+            eval(code);
         }
     </script>
 </body>
