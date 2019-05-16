@@ -382,7 +382,7 @@ select {
 }
 
 .logo {
-	padding: 25px;
+	padding: 20px 25px 20px 25px;
 	background: url("../img/00.jpg") no-repeat;
 }
 
