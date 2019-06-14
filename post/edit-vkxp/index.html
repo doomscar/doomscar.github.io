@@ -91,7 +91,7 @@
   $query[<span style="color:#e6db74">&#39;params&#39;</span>] <span style="color:#f92672">=</span> $params;
   $query[<span style="color:#e6db74">&#39;params&#39;</span>][<span style="color:#e6db74">&#39;v&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;5.95&#39;</span>; <span style="color:#75715e">//Старое значение 3, меняем его на последнюю версию API
 </span><span style="color:#75715e"></span>  $query[<span style="color:#e6db74">&#39;request_url&#39;</span>] <span style="color:#f92672">=</span> $request_url;
-  <span style="color:#a6e22e">drupal_alter</span>(<span style="color:#e6db74">&#39;vkxp_query&#39;</span>, $query);<span style="color:#f92672">&gt;</span>
+  <span style="color:#a6e22e">drupal_alter</span>(<span style="color:#e6db74">&#39;vkxp_query&#39;</span>, $query);
 </code></pre></div>
 
 <p>Согласно <a href="https://vk.com/dev/version5" rel="nofollow" target="_blank">списку изменений в пятой версии</a> меняются некоторые параметры</p>
@@ -115,7 +115,7 @@
 </span><span style="color:#75715e"></span>  }
   <span style="color:#66d9ef">else</span> {
     $params[<span style="color:#e6db74">&#39;user_id&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">variable_get</span>(<span style="color:#e6db74">&#39;vkxp_owner_id&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>); <span style="color:#75715e">// старый параметр uid
-</span><span style="color:#75715e"></span>  }<span style="color:#f92672">&gt;</span>
+</span><span style="color:#75715e"></span>  }
 </code></pre></div>
 
 <p>И еще в одном месте:</p>
@@ -127,7 +127,7 @@
   }
   <span style="color:#66d9ef">else</span> {
     $params[<span style="color:#e6db74">&#39;user_id&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">variable_get</span>(<span style="color:#e6db74">&#39;vkxp_owner_id&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>);
-  }<span style="color:#f92672">&gt;</span>
+  }
 </code></pre></div>
 
 <p>После этого должно все работать как и прежде. Возможно понадобится заново получить токен.</p>
