@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Разработка on Stop IT</title>
+    <link>https://doomscar.github.io/categories/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0/</link>
+    <description>Recent content in Разработка on Stop IT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Fri, 14 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://doomscar.github.io/categories/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Правим модуль Drupal для кросспостинга статей ВКонтакте</title>
+      <link>https://doomscar.github.io/post/edit-vkxp/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://doomscar.github.io/post/edit-vkxp/</guid>
+      <description>&lt;p&gt;Если в 2к19 вы до сих пор держите сайт на Drupal и в качестве репоста статей в группу ВКонтакте используете модуль vkxp версии 7.x-2.0, то эта заметка для вас.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
