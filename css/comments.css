@@ -109,6 +109,7 @@
 
 .dialog:target {
    display: block;
+   z-index: 1;
 }
 
 .dialog .btn-primary.comment-buttons.ok {
