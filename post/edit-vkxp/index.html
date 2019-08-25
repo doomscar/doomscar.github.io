@@ -1,173 +1,29 @@
-<!DOCTYPE html>
-<html class="no-js" lang="ru-ru">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>VKXP модуль Drupal, изменение версии API - Stop IT</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="Example test article that contains basic HTML elements for text formatting on the Web.">
-	<meta property="og:title" content="VKXP модуль Drupal, изменение версии API" />
-<meta property="og:description" content="Example test article that contains basic HTML elements for text formatting on the Web." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://doomscar.github.io/post/edit-vkxp/" />
-<meta property="article:published_time" content="2019-06-14T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-06-14T00:00:00&#43;00:00"/>
-
-	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="VKXP модуль Drupal, изменение версии API"/>
-<meta name="twitter:description" content="Example test article that contains basic HTML elements for text formatting on the Web."/>
-
-	<link rel="dns-prefetch" href="//fonts.googleapis.com">
-	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
-	<link rel="stylesheet" href="/css/style.css">
-	
-	<link rel="shortcut icon" href="/favicon.ico">
-		
-</head>
-<body class="body">
-	<div class="container container--outer">
-		<header class="header">
-	<div class="container">
-		<div class="logo">
-			<div class="logo__block">
-				<a class="logo__link" href="/" title="Stop IT" rel="home">
-					<div class="logo__title">Stop IT</div>
-					<div class="logo__tagline">Истина где-то рядом</div>
-				</a>
-			</div>
-		</div>
-		
-<nav class="menu">
-	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
-		<span class="menu__btn-title" tabindex="-1">Меню</span>
-	</button>
-	<ul class="menu__list">
-		<li class="menu__item">
-			<a class="menu__link" href="/about/">Кратко</a>
-		</li>
-	</ul>
-</nav>
-
-	</div>
-</header>
-		<div class="wrapper flex">
-			<div class="primary">
-			
-<main class="main" role="main">
-	<article class="post">
-		<header class="post__header">
-			<h1 class="post__title">VKXP модуль Drupal, изменение версии API</h1>
-			<div class="post__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-06-14T00:00:00">June 14, 2019</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%d1%80%d0%b0%d0%b7%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%ba%d0%b0" rel="category">Разработка</a></span>
-</div>
-</div>
-		</header>
-		<figure class="post__thumbnail">
-			<img src="/img/drupal.jpg" alt="VKXP модуль Drupal, изменение версии API">
-		</figure><div class="content post__content clearfix">
-			<p>Если в 2к19 вы до сих пор держите сайт на Drupal и в качестве репоста статей в группу ВКонтакте используете модуль vkxp версии 7.x-2.0, то эта заметка для вас.</p>
-
-<p>В начале июня, пытаясь закинуть статью на сайт и отрепостить в группе, Drupal любезно вернул мне ошибку, частью которой была ссылка <a href="https://vk.com/dev/version_update_2.0" rel="nofollow" target="_blank">https://vk.com/dev/version_update_2.0</a>, где меня ожидала новость о том, что ВК отказывается от мажорных версий API, то есть приложения или сервисы использующие API ВКонтакте ниже пятой версии работать не будут.</p>
-
-<p>На самом деле для восстановления работы модуля многого ненужно, достаточно поправить версию и проверить параметры. Все изменения будут проводиться в файле <strong>vkxp.module</strong></p>
-
-<p><strong>Меняем версию API в фунции vkxp_query</strong></p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">vkxp_query</span>($method, $params, $request_url <span style="color:#f92672">=</span> <span style="color:#a6e22e">VKXP_API_REQUEST_URI</span>) {
-  <span style="color:#75715e">// Collect query data.
-</span><span style="color:#75715e"></span>  $query <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
-  $query[<span style="color:#e6db74">&#39;v&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;5.95&#39;</span>; <span style="color:#75715e">//Старое значение 3, меняем его на последнюю версию API
-</span><span style="color:#75715e"></span>  $query[<span style="color:#e6db74">&#39;method&#39;</span>] <span style="color:#f92672">=</span> $method;
-  $query[<span style="color:#e6db74">&#39;params&#39;</span>] <span style="color:#f92672">=</span> $params;
-  $query[<span style="color:#e6db74">&#39;params&#39;</span>][<span style="color:#e6db74">&#39;v&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;5.95&#39;</span>; <span style="color:#75715e">//Старое значение 3, меняем его на последнюю версию API
-</span><span style="color:#75715e"></span>  $query[<span style="color:#e6db74">&#39;request_url&#39;</span>] <span style="color:#f92672">=</span> $request_url;
-  <span style="color:#a6e22e">drupal_alter</span>(<span style="color:#e6db74">&#39;vkxp_query&#39;</span>, $query);
-</code></pre></div>
-
-<p>Согласно <a href="https://vk.com/dev/version5" rel="nofollow" target="_blank">списку изменений в пятой версии</a> меняются некоторые параметры</p>
-
-<p>В нашем случае необходимо заменить два параметра:</p>
-
-<ol>
-<li><strong>gid</strong> на <strong>group_id</strong></li>
-<li><strong>uid</strong> на  <strong>user_id</strong>.</li>
-</ol>
-
-<p>Эти параметры встречаются в файле несколько раз, можно поменять через поиск/замена вашего текстового редактора.</p>
-
-<p>Должно получиться как-то так:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">_vkxp_get_upload_server</span>() {
-  $params <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">variable_get</span>(<span style="color:#e6db74">&#39;vkxp_wall_owner&#39;</span>, <span style="color:#e6db74">&#39;group&#39;</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;group&#39;</span>) {
-    $params[<span style="color:#e6db74">&#39;group_id&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">variable_get</span>(<span style="color:#e6db74">&#39;vkxp_owner_id&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>); <span style="color:#75715e">// старый параметр gid
-</span><span style="color:#75715e"></span>  }
-  <span style="color:#66d9ef">else</span> {
-    $params[<span style="color:#e6db74">&#39;user_id&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">variable_get</span>(<span style="color:#e6db74">&#39;vkxp_owner_id&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>); <span style="color:#75715e">// старый параметр uid
-</span><span style="color:#75715e"></span>  }
-</code></pre></div>
-
-<p>И еще в одном месте:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#75715e">// Get owner ID depends on its type.
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">variable_get</span>(<span style="color:#e6db74">&#39;vkxp_wall_owner&#39;</span>, <span style="color:#e6db74">&#39;group&#39;</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;group&#39;</span>) {
-    $params[<span style="color:#e6db74">&#39;group_id&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">variable_get</span>(<span style="color:#e6db74">&#39;vkxp_owner_id&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>);
+<!doctype html><html class=no-js lang=ru-ru><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><title>VKXP модуль Drupal, изменение версии API - Stop IT</title><script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script><meta name=description content="Example test article that contains basic HTML elements for text formatting on the Web."><meta property=og:title content="VKXP модуль Drupal, изменение версии API"><meta property=og:description content="Example test article that contains basic HTML elements for text formatting on the Web."><meta property=og:type content=article><meta property=og:url content=https://doomscar.github.io/post/edit-vkxp/><meta property=article:published_time content=2019-06-14T00:00:00&#43;00:00><meta property=article:modified_time content=2019-06-14T00:00:00&#43;00:00><meta name=twitter:card content=summary><meta name=twitter:title content="VKXP модуль Drupal, изменение версии API"><meta name=twitter:description content="Example test article that contains basic HTML elements for text formatting on the Web."><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=stylesheet href=/css/style.css><link rel="shortcut icon" href=/favicon.ico></head><body class=body><div class="container container--outer"><header class=header><div class=container><div class=logo><div class=logo__block><a class=logo__link href=/ title="Stop IT" rel=home><div class=logo__title>Stop IT</div><div class=logo__tagline>Истина где-то рядом</div></a></div></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Меню</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/about/>Кратко</a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>VKXP модуль Drupal, изменение версии API</h1><div class="post__meta meta"><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2019-06-14T00:00:00>June 14, 2019</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/%d1%80%d0%b0%d0%b7%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%ba%d0%b0 rel=category>Разработка</a></span></div></div></header><figure class=post__thumbnail><img src=/img/drupal.jpg alt="VKXP модуль Drupal, изменение версии API"></figure><div class="content post__content clearfix"><p>Если в 2к19 вы до сих пор держите сайт на Drupal и в качестве репоста статей в группу ВКонтакте используете модуль vkxp версии 7.x-2.0, то эта заметка для вас.</p><p>В начале июня, пытаясь закинуть статью на сайт и отрепостить в группе, Drupal любезно вернул мне ошибку, частью которой была ссылка <a href=https://vk.com/dev/version_update_2.0 rel=nofollow target=_blank>https://vk.com/dev/version_update_2.0</a>, где меня ожидала новость о том, что ВК отказывается от мажорных версий API, то есть приложения или сервисы использующие API ВКонтакте ниже пятой версии работать не будут.</p><p>На самом деле для восстановления работы модуля многого ненужно, достаточно поправить версию и проверить параметры. Все изменения будут проводиться в файле <strong>vkxp.module</strong></p><p><strong>Меняем версию API в фунции vkxp_query</strong></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75715e>&lt;?php</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>vkxp_query</span>($method, $params, $request_url <span style=color:#f92672>=</span> <span style=color:#a6e22e>VKXP_API_REQUEST_URI</span>) {
+  <span style=color:#75715e>// Collect query data.
+</span><span style=color:#75715e></span>  $query <span style=color:#f92672>=</span> <span style=color:#66d9ef>array</span>();
+  $query[<span style=color:#e6db74>&#39;v&#39;</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;5.95&#39;</span>; <span style=color:#75715e>//Старое значение 3, меняем его на последнюю версию API
+</span><span style=color:#75715e></span>  $query[<span style=color:#e6db74>&#39;method&#39;</span>] <span style=color:#f92672>=</span> $method;
+  $query[<span style=color:#e6db74>&#39;params&#39;</span>] <span style=color:#f92672>=</span> $params;
+  $query[<span style=color:#e6db74>&#39;params&#39;</span>][<span style=color:#e6db74>&#39;v&#39;</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;5.95&#39;</span>; <span style=color:#75715e>//Старое значение 3, меняем его на последнюю версию API
+</span><span style=color:#75715e></span>  $query[<span style=color:#e6db74>&#39;request_url&#39;</span>] <span style=color:#f92672>=</span> $request_url;
+  <span style=color:#a6e22e>drupal_alter</span>(<span style=color:#e6db74>&#39;vkxp_query&#39;</span>, $query);
+</code></pre></div><p>Согласно <a href=https://vk.com/dev/version5 rel=nofollow target=_blank>списку изменений в пятой версии</a> меняются некоторые параметры</p><p>В нашем случае необходимо заменить два параметра:</p><ol><li><strong>gid</strong> на <strong>group_id</strong></li><li><strong>uid</strong> на <strong>user_id</strong>.</li></ol><p>Этипараметры встречаются в файле несколько раз, можно поменять через поиск/замена вашего текстового редактора.</p><p>Должно получиться как-то так:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75715e>&lt;?php</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>_vkxp_get_upload_server</span>() {
+  $params <span style=color:#f92672>=</span> <span style=color:#66d9ef>array</span>();
+  <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>variable_get</span>(<span style=color:#e6db74>&#39;vkxp_wall_owner&#39;</span>, <span style=color:#e6db74>&#39;group&#39;</span>) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;group&#39;</span>) {
+    $params[<span style=color:#e6db74>&#39;group_id&#39;</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>variable_get</span>(<span style=color:#e6db74>&#39;vkxp_owner_id&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>); <span style=color:#75715e>// старый параметр gid
+</span><span style=color:#75715e></span>  }
+  <span style=color:#66d9ef>else</span> {
+    $params[<span style=color:#e6db74>&#39;user_id&#39;</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>variable_get</span>(<span style=color:#e6db74>&#39;vkxp_owner_id&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>); <span style=color:#75715e>// старый параметр uid
+</span><span style=color:#75715e></span>  }
+</code></pre></div><p>И еще в одном месте:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75715e>&lt;?php</span>
+<span style=color:#75715e>// Get owner ID depends on its type.
+</span><span style=color:#75715e></span>  <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>variable_get</span>(<span style=color:#e6db74>&#39;vkxp_wall_owner&#39;</span>, <span style=color:#e6db74>&#39;group&#39;</span>) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;group&#39;</span>) {
+    $params[<span style=color:#e6db74>&#39;group_id&#39;</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>variable_get</span>(<span style=color:#e6db74>&#39;vkxp_owner_id&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>);
   }
-  <span style="color:#66d9ef">else</span> {
-    $params[<span style="color:#e6db74">&#39;user_id&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">variable_get</span>(<span style="color:#e6db74">&#39;vkxp_owner_id&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>);
+  <span style=color:#66d9ef>else</span> {
+    $params[<span style=color:#e6db74>&#39;user_id&#39;</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>variable_get</span>(<span style=color:#e6db74>&#39;vkxp_owner_id&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>);
   }
-</code></pre></div>
-
-<p>После этого должно все работать как и прежде. Возможно потребуется заново получить токен.</p>
-		</div>
-		
-<div class="post__tags tags clearfix">
-	<svg class="tags__icon icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link btn" href="/tags/php/" rel="tag">PHP</a></li>
-		<li class="tags__item"><a class="tags__link btn" href="/tags/drupal/" rel="tag">Drupal</a></li>
-	</ul>
-</div>
-	</article>
-</main>
-
-<div class="authorbox clearfix">
-	<figure class="authorbox__avatar">
-		<img alt="doomscar avatar" src="/img/top02.png" class="avatar" height="90" width="90">
-	</figure>
-	<div class="authorbox__header">
-		<span class="authorbox__name">Об авторе doomscar</span>
-	</div>
-	<div class="authorbox__description">
-		Свободный художник
-	</div>
-</div>
-
-
-
-			</div>
-			
-		</div>
-		<footer class="footer">
-	<div class="container footer__container flex">
-		
-		<div class="footer__copyright">
-			&copy; 2019 Stop IT.
-		</div>
-	</div>
-</footer>
-	</div>
-<script async defer src="/js/menu.js"></script></body>
-</html>
+</code></pre></div><p>После этого должно все работать как и прежде. Возможно потребуется заново получить токен.</p></div><div class="post__tags tags clearfix"><svg class="tags__icon icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/php/ rel=tag>PHP</a></li><li class=tags__item><a class="tags__link btn" href=/tags/drupal/ rel=tag>Drupal</a></li></ul></div></article></main><div class="authorbox clearfix"><figure class=authorbox__avatar><img alt="doomscar avatar" src=/img/top02.png class=avatar height=90 width=90></figure><div class=authorbox__header><span class=authorbox__name>Об авторе doomscar</span></div><div class=authorbox__description>Свободный художник</div></div></div></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2019 Stop IT.</div></div></footer></div><script async defer src=/js/menu.js></script></body></html>
