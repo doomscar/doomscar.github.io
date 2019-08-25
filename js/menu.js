@@ -18,13 +18,13 @@
 		this.classList.remove('menu__list--transition');
 	}
 
-	function changeValue(elementName, newValue){
-		document.getElementsByName(elementName)[0].value=newValue;
-		window.location.hash = "#comment-form";
-	};
-
 	if (menuBtn && menu) {
 		menuBtn.addEventListener('click', toggleMenu, false);
 		menu.addEventListener('transitionend', removeMenuTransition, false);
 	}
 }(document, window));
+
+function changeValue(elementName, newValue){
+	document.getElementsByName(elementName)[0].value=newValue;
+	window.location.hash = "#comment-form";
+};
